@@ -1,0 +1,25 @@
+<ion-view view-title="Personal">
+  <ion-content class="padding" delegate-handle="t-refresher">
+    <ion-refresher on-refresh="getTransactions()">
+    </ion-refresher>
+    <div style="text-align:center" ng-show="!!$root.user.bank.item">
+      <h2>{{user.coinBalance | number:2}} CC</h2>
+      <h4>{{user.bank.balance | currency}}</h4>
+    </div>
+    <div ng-show="!$root.user.bank.item">
+      <h4 class="title" style="text-align:center">Earn Chill Coins<br>Share Transactions</h4>
+      <button ng-click="bankLogin() " class="button button-block button-positive ion-card" id="link-btn">&nbsp&nbsp&nbspLink Bank</button>
+      <p>By logging in you agree to our <a href="https://www.chillwastaken.com/privacy" target="_blank">privacy policy</a> and <a href="https://www.chillwastaken.com/terms" target="_blank">terms of service</a>.</p>
+    </div>
+    <div ng-show="!!$root.user.bank.item && transactions.length == 0">Gathering Transactions...</div>
+    <!-- <button ng-if="!!user.bank.accessToken " class="button button-block button-positive " ng-click="getTransactions() ">Get Transactions</button> -->
+    <ion-list ng-show="!!$root.user.bank.item">
+      <ion-item class="item-remove-animate item-text-wrap" ng-style="trans.published?{'background-color':'#f9e3d6'}:{}" ng-repeat="trans in transactions">
+        {{trans.name}} - {{trans.category[0]}} - {{trans.amount}}
+        <button ng-if="!trans.published && $root.user.facebook.id" ng-click="newPost(trans)">Create post</button>
+        <button ng-show="!!trans.location.lat" ng-click="openMapCall(trans)">Open Map</button>
+        <button ng-if="trans.published" ng-click="deletePost(trans)">Delete post</button>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>
