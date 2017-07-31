@@ -5,8 +5,6 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 
-// var rootUrl = "http://localhost:8000"; //browser/simulator development
-var rootUrl = "https://minkchat.com"; //production
 window.app = angular.module('starter', ['ionic', 'ionic.cloud', 'ngCordova', 'ngCordova.plugins.nativeStorage', 'ngCordova.plugins.pinDialog'])
 .controller('AppController', function($rootScope) {})
 .run(function($cordovaNativeStorage) {
