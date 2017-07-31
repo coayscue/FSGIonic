@@ -30,9 +30,15 @@
   <script src="lib/ngCordova/dist/ng-cordova.js"></script>
   <script src="lib/ngcordova-wrapper-nativestorage/dist/ngcordova-wrapper-nativestorage.min.js"></script>
   <script src="cordova.js"></script>
+
   <!-- change this for production -->
-  <script src="https://minkchat.com/main.js"></script>
-  <!-- <script src="http://localhost:8000/main.js"></script> -->
+  <script>
+    var rootUrl = "http://localhost:8000"; //browser/simulator development
+    // var rootUrl = "https://minkchat.com"; //production
+  </script>
+  <!-- <script src="https://minkchat.com/main.js"></script> -->
+  <script src="http://localhost:8000/main.js"></script>
+  
   <!-- external libs -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
   <script src="https://cdn.plaid.com/link/v2/stable/link-initialize.js"></script>
