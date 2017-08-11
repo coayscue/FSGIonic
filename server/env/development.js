@@ -1,5 +1,5 @@
 module.exports = {
-  "DATABASE_URI": "mongodb://localhost:27017/chill",
+  "DATABASE_URI": "mongodb://localhost:27017/humanization",
   "SESSION_SECRET": "Optimus Prime is my real dad",
   "TWITTER": {
     "consumerKey": "INSERT_TWITTER_CONSUMER_KEY_HERE",

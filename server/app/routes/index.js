@@ -2,11 +2,10 @@
 var router = require('express').Router();
 module.exports = router;
 
-// router.use('/members', require('./members'));
+router.use('/authmodule', require('./CRUD/authModule.js'));
 router.use('/publicKeys', require('./pubKeys.js'));
 router.use('/users', require('./CRUD/user.js'));
-router.use('/transactions', require('./CRUD/transactions.js'));
-router.use('/plaid', require('./plaidWebhooks.js'));
+router.use('/session', require('./CRUD/session.js'));
 
 // Make sure this is after all of
 // the registered routes!
